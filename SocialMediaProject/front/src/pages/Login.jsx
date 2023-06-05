@@ -85,7 +85,7 @@ const Login = () => {
                 mx: 'auto',
                 mt: 4,
                 borderRadius: "0.35rem",
-                width: '40vw'
+                width: '80%'
               }}
               onChange={e => setemail(e.target.value)}
               required
@@ -103,13 +103,13 @@ const Login = () => {
                 mx: 'auto',
                 mt: 4,
                 borderRadius: "0.35rem",
-                width: '40vw',
+                width: '80%',
 
               }}
 
               className={`bg-[white] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] `}
             />
-            <div className="w-[40vw] h-[8vh] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] mt-8">
+            <div className="w-[80%] h-[8vh] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] mt-8">
               <input type="submit" value="Login" className="bg-[#03fcdf] cursor-pointer  box-border w-full h-full rounded-[0.35rem] text-[1.5rem] text-[#2d2d2d] " />
             </div>
             <div className="mt-[1.5rem]"><a href="/register" className="text-[12px] flex hover:underline hover:text-[#0e2684]">Dont have an account?Click Here</a></div>
