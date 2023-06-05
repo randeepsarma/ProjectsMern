@@ -200,7 +200,7 @@ const Registration = ({ userData, update }) => {
             <input type="submit" value={update === "update" ? "Update" : "Register"} className="bg-[#03fcdf] cursor-pointer  box-border w-full h-full rounded-[0.35rem] text-[1.5rem] text-[#2d2d2d] " />
           </div>
           {update === "update" ? <></> :
-            <div className="mt-[1.5rem]"><a href="/" className=" hover:underline hover:text-[#0e2684]">Already have an account?Click Here</a>
+            <div className="mt-[1.5rem]"><a href="/" className="text-[12px] flex justify-center hover:underline hover:text-[#0e2684]">Already have an account?Click Here</a>
             </div>}
           <p className={`${error.color === '' ? "text-[red]" : "text-[#00a339e1]"} text-[0.9rem]`}>{error.status ? error.msg : ""}</p>
         </form>
