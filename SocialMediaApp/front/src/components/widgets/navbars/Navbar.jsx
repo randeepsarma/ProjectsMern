@@ -81,6 +81,7 @@ const Navbar = () => {
     const handleLogout = () => {
         try {
             //socket.emit('discon', obj.user.id)
+            setOpen(false)
             dispatch(changeToken(null))
             dispatch(changeUser({ user: null }))
             //dispatch(changeConvoId())
@@ -159,6 +160,10 @@ const Navbar = () => {
     }
 
     const isBigNav = useMediaQuery("(min-width:600px)")
+    const handleOpen = (e) => {
+        e.preventDefault()
+        setOpen(prev => !prev)
+    }
     return (
         <div className={`navbar ${obj.mode === 'dark' ? "bg-[#060944] text-[#2d93ff]" : "bg-[#aaaaaa] text-[#005eff]"}`}>
             <div className="container">
@@ -170,7 +175,7 @@ const Navbar = () => {
                     <div className="links">
                         {isBigNav ? <NavComp /> : <></>}
                         <div className="user" >
-                            <img src={obj.user.imageUrl} alt="" onClick={() => setOpen(!open)} />
+                            <img src={obj.user.imageUrl} alt="" onClick={e=>handleOpen(e} />
                             <span>{currentUser?.username}</span>
                             {open && (
                                 <div className={`options ${obj.mode === 'dark' ? "bg-[#0c0f7c] text-[white]" : "bg-[white] text-[black] font-bold shadow-[10px_10px_30px_8px_rgba(0,0,0,0.3)]"}`}>
