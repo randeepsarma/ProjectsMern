@@ -1,0 +1,1 @@
+yarn add express body-parser(to process the req.body) bcrypt(password encryption) cors(cross origin request) dotenv(for environment variable) gridfs-stream(file upload) multer multer-gridfs-storage(upload files locally) helmet(for request safety by changing the headers) morgan(for login) jsonwebtoken(authentication) mongoos
