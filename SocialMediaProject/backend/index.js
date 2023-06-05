@@ -84,9 +84,13 @@ app.use(bodyParser.urlencoded({ limit: "40mb", extended: true }))
 
 app.use(bodyParser.json({ limit: "40mb", extended: true }))
 
-
+const corsOptions ={
+  origin:'https://projects-mern.vercel.app', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200
+}
 //invoking cross origin resource sharing policies
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use('/user', userRoutes)
 app.use('/posts', postRoutes)
