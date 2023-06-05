@@ -91,7 +91,7 @@ const Registration = ({ userData, update }) => {
               mt: 2,
 
               borderRadius: "0.35rem",
-              width: '40vw'
+              width: '80%'
             }}
             defaultValue={firstname}
             size="small"
@@ -110,7 +110,7 @@ const Registration = ({ userData, update }) => {
               mx: 'auto',
               mt: 2,
               borderRadius: "0.35rem",
-              width: '40vw'
+              width: '80%'
             }}
             required
             className="bg-[#fafafa] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)]"
@@ -127,7 +127,7 @@ const Registration = ({ userData, update }) => {
               mx: 'auto',
               mt: 2,
               borderRadius: "0.35rem",
-              width: '40vw'
+              width: '80%'
             }}
             required
             className="bg-[#fafafa] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)]"
@@ -144,14 +144,14 @@ const Registration = ({ userData, update }) => {
               mx: 'auto',
               mt: 2,
               borderRadius: "0.35rem",
-              width: '40vw'
+              width: '80%'
             }}
             required
             className="bg-[#fafafa] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)]"
           />
 
 
-          <div {...getRootProps()} className={`dropzone-container border-[1px] border-[grey] h-10 mt-4 rounded-[0.35rem] w-[40vw] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] flex justify-center items-center`}>
+          <div {...getRootProps()} className={`dropzone-container border-[1px] border-[grey] h-10 mt-4 rounded-[0.35rem] w-[80%] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] flex justify-center items-center`}>
             <input {...getInputProps()} name="photo" />
             {
               !picvalue ?
@@ -174,7 +174,7 @@ const Registration = ({ userData, update }) => {
               mx: 'auto',
               mt: 2,
               borderRadius: "0.35rem",
-              width: '40vw'
+              width: '80%'
             }}
             required
             className="bg-[#fafafa] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)]"
@@ -193,13 +193,13 @@ const Registration = ({ userData, update }) => {
               mx: 'auto',
               mt: 2,
               borderRadius: "0.35rem",
-              width: '40vw',
+              width: '80%',
 
             }}
 
             className={`bg-[white] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] `}
           />
-          <div className="w-[40vw] h-[8vh] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] mt-8">
+          <div className="w-[80%] h-[8vh] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] mt-8">
             <input type="submit" value={update === "update" ? "Update" : "Register"} className="bg-[#03fcdf] cursor-pointer  box-border w-full h-full rounded-[0.35rem] text-[1.5rem] text-[#2d2d2d] " />
           </div>
           {update === "update" ? <></> :
