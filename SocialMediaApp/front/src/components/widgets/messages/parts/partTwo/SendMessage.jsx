@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import {useDispatch, useSelector } from 'react-redux'
 import SendIcon from '@mui/icons-material/Send';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import { changeAlertMessages } from 'counter/CounterSlice';
 
 const SendMessage = ({ messages, setMessages }) => {
 
     const obj = useSelector(state => state.counterSliceReducer)
     const [desc, setDesc] = useState("")
     const { id: convoId } = useParams()
+    const dispatch = useDispatch()
     const handleSubmit = async (e) => {
         e.preventDefault()
         if (desc === "") return;
@@ -22,6 +23,7 @@ const SendMessage = ({ messages, setMessages }) => {
             receiver: obj.presentMessagePerson.userId,
             readByReceiver: false
         }
+        dispatch(changeAlertMessages())
         setDesc("")
         setMessages(prev => [...prev, message])
         try {
