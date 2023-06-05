@@ -90,7 +90,7 @@ const corsOptions ={
   optionSuccessStatus:200
 }
 //invoking cross origin resource sharing policies
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.use('/user', userRoutes)
 app.use('/posts', postRoutes)
