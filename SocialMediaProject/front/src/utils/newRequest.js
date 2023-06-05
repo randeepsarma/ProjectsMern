@@ -1,5 +1,5 @@
 
-export const baseUrl = process.env.REACT_APP_BACKEND
+export const baseUrl = process.env.REACT_APP_BACKEND || https://projects-mern-backend.vercel.app/
 
 export const month = {
     "Jan": 1,
