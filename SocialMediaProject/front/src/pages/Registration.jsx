@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import CssTextField from 'components/CssTextField';
 //import { useRegisterUserMutation } from 'counter/userAuthApi';
 import { registerUser } from 'api/userAuth.js';
+import { useMediaQuery } from '@mui/material'
+
 const Registration = ({ userData, update }) => {
   const [error, setError] = useState({
     msg: '',
@@ -72,11 +74,12 @@ const Registration = ({ userData, update }) => {
       setError({ msg: '', status: false, color: 'red' })
     }, 2000);
   }, [error.status])
+  const isNonMobileScreens = useMediaQuery("(min-width:600px)")
 
   return (
     <>
-      <div className='flex flex-col  h-screen w-full justify-center items-center' >
-        <form className=" flex justify-center items-center flex-col  box-border  h-[88vh] w-[55vw] rounded-2xl shadow-[2px_2px_20px_2px_rgba(0,0,0,0.3)] mt-[1rem" onSubmit={handleSubmit} ref={formRef}>
+      <div className={`flex flex-col  h-screen w-full justify-center items-center`} >
+        <form className={`${!isNonMobileScreens?"w-[300px]":"w-[55vw]"}  flex justify-center items-center flex-col  box-border  h-[88vh]  rounded-2xl shadow-[2px_2px_20px_2px_rgba(0,0,0,0.3)] mt-[1rem`} onSubmit={handleSubmit} ref={formRef}>
           <CssTextField
             id="outlined-firstname-input"
             label="First Name"
@@ -148,7 +151,7 @@ const Registration = ({ userData, update }) => {
           />
 
 
-          <div {...getRootProps()} className="dropzone-container border-[1px] border-[grey] h-10 mt-4 rounded-[0.35rem] w-[73%] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] flex justify-center items-center">
+          <div {...getRootProps()} className={`dropzone-container border-[1px] border-[grey] h-10 mt-4 rounded-[0.35rem] w-[40vw] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] flex justify-center items-center`}>
             <input {...getInputProps()} name="photo" />
             {
               !picvalue ?
