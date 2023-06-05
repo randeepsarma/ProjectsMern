@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import CssTextField from "components/CssTextField";
 //import { useLoginUserMutation } from "counter/userAuthApi";
 import { loginUser } from "api/userAuth";
+import { useMediaQuery } from '@mui/material'
 
 const Login = () => {
   //state management for items in the form
@@ -67,12 +68,13 @@ const Login = () => {
       setError({ msg: '', status: false, color: 'red' })
     }, 4000);
   }, [error.status, setError])
+  const isNonMobileScreens = useMediaQuery("(min-width:600px)")
 
   return (
     <>
-      <div className={`bg-[white] h-screen`}>
-        <form className="flex flex-col justify-center items-center box-border h-full w-full" onSubmit={handleSubmit} ref={formRef}>
-          <div className=" flex justify-center items-center flex-col  box-border  h-[60vh] w-[55vw] rounded-2xl shadow-[2px_2px_20px_2px_rgba(0,0,0,0.3)]">
+      <div className={`flex flex-col  h-screen w-full justify-center items-center`}>
+        <form className={`${!isNonMobileScreens?"w-[300px]":"w-[55vw]"}  flex justify-center items-center flex-col  box-border  h-[88vh]  rounded-2xl shadow-[2px_2px_20px_2px_rgba(0,0,0,0.3)] mt-[1rem`} onSubmit={handleSubmit} ref={formRef}>
+          
             <CssTextField
               id="outlined-email-input"
               label="Email"
@@ -110,9 +112,9 @@ const Login = () => {
             <div className="w-[40vw] h-[8vh] shadow-[5px_5px_5px_3px_rgba(0,0,0,0.3)] mt-8">
               <input type="submit" value="Login" className="bg-[#03fcdf] cursor-pointer  box-border w-full h-full rounded-[0.35rem] text-[1.5rem] text-[#2d2d2d] " />
             </div>
-            <div className="mt-[1.5rem]"><a href="/register" className="text-[12px] flex justify-center hover:underline hover:text-[#0e2684]">Dont have an account?Click Here</a></div>
+            <div className="mt-[1.5rem]"><a href="/register" className="text-[12px] flex hover:underline hover:text-[#0e2684]">Dont have an account?Click Here</a></div>
             <p className={` text-[${error.color}] text-[0.9rem] font-bold`}>{error.status ? error.msg : ""}</p>
-          </div>
+        
         </form>
       </div>
 
