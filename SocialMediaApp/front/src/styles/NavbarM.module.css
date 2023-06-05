@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 80%;
+    right: 9.4%;
+}
+
+.exception {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
