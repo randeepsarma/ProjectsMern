@@ -1,0 +1,28 @@
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 6px !important;
+
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 100%, .5)
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5)
+}

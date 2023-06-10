@@ -1,0 +1,11 @@
+.parentType {
+    position: relative;
+}
+
+.searchType {
+    position: absolute;
+    top: 80%;
+    background: grey;
+    padding: 5px;
+    right: 16.6%;
+}
