@@ -25,6 +25,7 @@ export const loginUser = async (user) => {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
     })
+    console.log(response.data)
     return response;
 }
 
