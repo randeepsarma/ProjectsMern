@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgress } from '@mui/material';
 import { month } from 'utils/newRequest';
 import { changePerson } from 'counter/CounterSlice';
-
+import { getUserData } from 'api/userAuth';
 const WidgetDisplay = ({ item, handleClick, convo, setSearching, searching }) => {
     //console.log(item)
     const obj = useSelector(state => state.counterSliceReducer)
@@ -28,8 +28,7 @@ const WidgetDisplay = ({ item, handleClick, convo, setSearching, searching }) =>
     useEffect(() => {
         const fetchData = async () => {
 
-            const res = await axios.get(`http://localhost:5000/user/findwithid/${findId}`)
-
+            const res = await getUserData({id:findId})
             setUser(res.data.user)
         }
 
