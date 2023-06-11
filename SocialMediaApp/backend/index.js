@@ -101,9 +101,9 @@ const corsOptions ={
 }
 //invoking cross origin resource sharing policies
 app.use(cors(corsOptions))
-app.use('/',(req,res)=>{
-   res.json({"message":"This is a new message"})
-})
+// app.use('/',(req,res)=>{
+//    res.json({"message":"This is a new message"})
+// })
 app.use('/user', userRoutes)
 app.use('/posts', postRoutes)
 app.use('/message', messageRoutes)
