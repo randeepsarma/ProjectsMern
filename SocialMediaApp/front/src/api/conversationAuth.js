@@ -1,6 +1,6 @@
 import axios from "axios"
 import { baseUrl } from "utils/newRequest"
-const base = baseUrl
+const base = 'https://chatapp-backend-pgzx.onrender.com' || baseUrl
 
 export const newConversation = async (users) => {
 
