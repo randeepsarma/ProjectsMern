@@ -17,7 +17,7 @@ const PartOne = ({ messages, setSearching, searching }) => {
     useEffect(() => {
         //console.log('hi')
         const fetchConvo = async () => {
-            const res = await getAllConversations(obj.user)
+            const res = await getAllConversations(obj.user.id)
             setConversations(res.data);
         }
 
