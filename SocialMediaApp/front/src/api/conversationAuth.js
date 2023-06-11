@@ -31,12 +31,19 @@ export const getConversation = async (users) => {
 }
 
 export const getAllConversations = async (users) => {
-    const response = await axios({
+   /* const response = await axios({
         method: 'POST',
-        url: `${base}/conversation/getAll`,
+        url: base + '/conversation/getAll',
         data: users,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
+        }
+    }) */
+    const response = await axios({
+        url: `${base}/conversation/getAll/${user.id}`,
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
         }
     })
     //console.log(response)
