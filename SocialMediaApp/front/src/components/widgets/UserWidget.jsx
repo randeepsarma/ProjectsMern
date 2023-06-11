@@ -69,7 +69,7 @@ const UserWidget = ({ profile, userData, setuserData }) => {
 
       setTimeout(() => {
 
-        navigate(`/message/${res.data._id}`)
+        navigate(`/message/${obj.user.id}`)
       }, 1000);
     } else {
       navigate(`/update/${obj.user.id}`)
