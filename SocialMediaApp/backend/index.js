@@ -95,7 +95,7 @@ app.use(bodyParser.urlencoded({ limit: "40mb", extended: true }))
 app.use(bodyParser.json({ limit: "40mb", extended: true }))
 
 const corsOptions ={
-  origin: 'https://projects-mern-kv3hdntks-sarmarandeepgithub12345.vercel.app' , 
+  origin: 'https://projects-mern-qrituh1u7-sarmarandeepgithub12345.vercel.app' , 
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200
 }
