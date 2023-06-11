@@ -1,6 +1,6 @@
 import axios from "axios"
 import { baseUrl } from "utils/newRequest"
-const base = 'https://chatapp-backend-pgzx.onrender.com' || baseUrl
+const base =  baseUrl
 
 export const newConversation = async (users) => {
 
@@ -30,7 +30,7 @@ export const getConversation = async (users) => {
     return response;
 }
 
-export const getAllConversations = async (user) => {
+export const getAllConversations = async (userId) => {
    /* const response = await axios({
         method: 'POST',
         url: base + '/conversation/getAll',
@@ -40,7 +40,7 @@ export const getAllConversations = async (user) => {
         }
     }) */
     const response = await axios({
-        url: `${base}/conversation/getAll/${user.id}`,
+        url: `${base}/conversation/getAll/${userid}`,
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
