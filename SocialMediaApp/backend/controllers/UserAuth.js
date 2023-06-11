@@ -53,7 +53,7 @@ export const register = async (req, res, next) => {
 export const login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
-        // console.log(req.body)
+         console.log(req.body)
         //check  if both fields are present
         if (email && password) {
             const checkUser = await User.findOne({ email: email }).select('+password');
