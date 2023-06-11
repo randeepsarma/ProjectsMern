@@ -4,6 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { changeAlertMessages } from 'counter/CounterSlice';
+import { baseUrl } from 'utils/newRequest';
 
 
 const SendMessage = ({ messages, setMessages }) => {
@@ -29,7 +30,7 @@ const SendMessage = ({ messages, setMessages }) => {
         setMessages(prev => [...prev, message])
         try {
             const res = await axios({
-                url: 'http://localhost:5000/message/add',
+                url: baseUrl+'/message/add',
                 method: 'POST',
                 data: message,
                 headers: {
