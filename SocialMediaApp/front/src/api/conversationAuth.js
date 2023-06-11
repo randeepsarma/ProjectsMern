@@ -40,7 +40,7 @@ export const getAllConversations = async (userId) => {
         }
     }) */
     const response = await axios({
-        url: `${base}/conversation/getAll/${userid}`,
+        url: `${base}/conversation/getAll/${userId}`,
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
