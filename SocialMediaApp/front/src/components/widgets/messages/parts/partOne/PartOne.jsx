@@ -9,7 +9,7 @@ import Search from './Search'
 import axios from 'axios'
 import WidgetDisplay from './WidgetDisplay'
 import { useNavigate } from 'react-router-dom';
-
+import { getAllConversations } from 'api/conversationAuth';
 const PartOne = ({ messages, setSearching, searching }) => {
     const obj = useSelector(state => state.counterSliceReducer)
     const [text, setText] = useState('')
@@ -17,8 +17,7 @@ const PartOne = ({ messages, setSearching, searching }) => {
     useEffect(() => {
         //console.log('hi')
         const fetchConvo = async () => {
-            const res = await axios.get(`http://localhost:5000/conversation/getAll/${obj.user.id}`)
-
+            const res = await getAllConversations(obj.user)
             setConversations(res.data);
         }
 
