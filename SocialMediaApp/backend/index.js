@@ -114,7 +114,7 @@ connectMongo()
 const db = mongoose.connection
 
 db.once('open', () => {
-  //console.log('DB connected')
+  console.log('DB connected')
 
   const msgCollection = db.collection("messages");
   //watching the messages collection
@@ -159,7 +159,7 @@ db.once('open', () => {
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
-  //console.log(`Server listening on http://localhost:${PORT}`)
+  console.log(`Server listening on http://localhost:${PORT}`)
 })
 
 
