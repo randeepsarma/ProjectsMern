@@ -30,7 +30,7 @@ export const getConversation = async (users) => {
     return response;
 }
 
-export const getAllConversations = async (users) => {
+export const getAllConversations = async (user) => {
    /* const response = await axios({
         method: 'POST',
         url: base + '/conversation/getAll',
