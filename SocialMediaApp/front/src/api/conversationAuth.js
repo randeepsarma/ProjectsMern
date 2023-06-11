@@ -6,12 +6,13 @@ export const newConversation = async (users) => {
 
     const response = await axios({
         method: 'POST',
-        url: base + '/conversation/add',
+        url: `${base}/conversation/add`,
         data: users,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         }
     })
+    console.log(response)
     return response;
 }
 
@@ -19,7 +20,7 @@ export const getConversation = async (users) => {
     //console.log(users)
     const response = await axios({
         method: 'POST',
-        url: base + '/conversation/get',
+        url: `${base}/conversation/get`,
         data: users,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -32,7 +33,7 @@ export const getConversation = async (users) => {
 export const getAllConversations = async (users) => {
     const response = await axios({
         method: 'POST',
-        url: base + '/conversation/getAll',
+        url: `${base}/conversation/getAll`,
         data: users,
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -44,7 +45,7 @@ export const getAllConversations = async (users) => {
 
 export const deleteConversation = async (convoId) => {
     const response = await axios({
-        url: base + '/conversation/delete',
+        url: `${base}/conversation/delete`,
         method: 'DELETE',
         headers: {
 
