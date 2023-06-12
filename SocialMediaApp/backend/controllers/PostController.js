@@ -44,15 +44,17 @@ export const deletePost = async (req, res, next) => {
     try {
         const { id } = req.body;
         const post = await Post.deleteOne({ _id: id })
-       
+        //console.log(post)
+        pusher.trigger('live-feed-channel', 'delete-post',{deletedId:id,userId:req.body.userId});
+        await Comment.deleteMany({ postId: id })
+        
+        
         if (req.body.postUrl) {
             const { postUrl } = req.body
             await destroyImage(postUrl)
         }
         
-        //console.log(post)
-        pusher.trigger('live-feed-channel', 'delete-post',{deletedId:id,userId:req.body.userId});
-        await Comment.deleteMany({ postId: id })
+       
         
         res.send({ "status": "success", "message": "User post and comments deleted", deletedPost: post })
     } catch (error) {
