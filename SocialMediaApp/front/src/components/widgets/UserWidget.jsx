@@ -104,7 +104,7 @@ const UserWidget = ({ profile, userData, setuserData }) => {
                 width:'15px',
                 height:'15px'
               }} /> : <></>}
-              <span className="text-[10px] ml-[5px] font-thin">{
+              <span className="text-[10px] ml-[5px] font-bold">{
 
                 profileId === obj.user.id ? "Edit" : "Message"
 
