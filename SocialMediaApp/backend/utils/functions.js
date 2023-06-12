@@ -7,6 +7,10 @@ export const destroyImage =async(url)=>{
     const imageName = image.split('.')[0];
 
     await cloudinary.uploader.destroy(imageName, (error, result) => {
-       // console.log(error, result)
+       try{
+       return result   
+       }catch(error){
+       return error
+       }
     })
 }
