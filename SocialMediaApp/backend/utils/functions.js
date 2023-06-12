@@ -12,9 +12,9 @@ export const destroyImage =async(url)=>{
 
     await cloudinary.uploader.destroy(imageName, (error, result) => {
        try{
-       return result   
+       console.log(result)  
        }catch(error){
-       return error
+       console.log(error)
        }
     })
 }
