@@ -42,14 +42,15 @@ export const createPost = async (req, res, next) => {
 export const deletePost = async (req, res, next) => {
     //console.log(req.body)
     try {
-
         const { id } = req.body;
+        const post = await Post.deleteOne({ _id: id })
+       
         if (req.body.postUrl) {
             const { postUrl } = req.body
             await destroyImage(postUrl)
         }
-        const post = await Post.deleteOne({ _id: id })
-        console.log(post)
+        
+        //console.log(post)
         pusher.trigger('live-feed-channel', 'delete-post',{deletedId:id,userId:req.body.userId});
         await Comment.deleteMany({ postId: id })
         
