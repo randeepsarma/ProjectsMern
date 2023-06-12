@@ -75,7 +75,7 @@ export const updateProfilePicture =async(token,data)=>{
     
     const response = await axios({
         url: `${base}/user/deleteImage`,
-        method: 'PATCH',
+        method: 'DELETE',
         data,
         headers: {
             'authorization': `Bearer ${token}`,
@@ -83,7 +83,7 @@ export const updateProfilePicture =async(token,data)=>{
         }
         
     }) 
-    console.log(response)
+    //console.log(response)
     return response
      
 }
