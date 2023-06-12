@@ -1,6 +1,10 @@
 import { v2 as cloudinary } from 'cloudinary'
 export const destroyImage =async(url)=>{
-    
+   cloudinary.config({
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.Cloud_api_key,
+  api_secret: process.env.api_secret
+});
     const urlArray = url.split('/')
     const image = urlArray[urlArray.length - 2] + "/" + urlArray[urlArray.length - 1]
 
