@@ -38,11 +38,7 @@ const ChangeDisplay = ({globalCheck,setglobalCheck}) => {
      }})) 
      data.append('OldImageUrl',obj.user.imageUrl)
      data.append('userId',obj.user.id)
-     const response =await updateProfilePicture(obj.token,{
-      NewImageUrl:res.url,
-      OldImageUrl:obj.user.imageUrl,
-      userId:obj.user.id
-     })
+     const response =await updateProfilePicture(obj.token,data)
 
   setPicValue(null)
   setPath("")
