@@ -72,6 +72,7 @@ export const updateDetails = async(userId,token,desc,num)=>{
 }
 
 export const updateProfilePicture =async(token,data)=>{
+    console.log(data)
     const response = await axios({
         url: `${base}/user/deleteImage`,
         method: 'PATCH',
@@ -82,7 +83,7 @@ export const updateProfilePicture =async(token,data)=>{
         }
         
     }) 
-    
+    console.log(response)
     return response
      
 }
