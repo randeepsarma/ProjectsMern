@@ -216,11 +216,12 @@ export const endProfileImage =async(req,res,next)=>{
     const {OldImageUrl,NewImageUrl,userId} =req.body;
     
     try {
-     const temp= await destroyImage(OldImageUrl)
-     console.log(temp)
-      await User.findByIdAndUpdate(userId,{
+     await User.findByIdAndUpdate(userId,{
         imageUrl:NewImageUrl
       })
+     const temp= await destroyImage(OldImageUrl)
+     console.log(temp)
+      
       res.status(200).json("Profile Picture Updated")
     } catch (error) {
       res.json(error)
