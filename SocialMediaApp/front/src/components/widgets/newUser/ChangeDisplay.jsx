@@ -28,7 +28,7 @@ const ChangeDisplay = ({globalCheck,setglobalCheck}) => {
      if(globalCheck===false){
      
      const res = await uploadFile(picvalue,'Social_Media_dp')
-     
+     console.log(res)
      const data = new FormData()
      data.append('NewImageUrl',res.url)
       dispatch(changeUser({
