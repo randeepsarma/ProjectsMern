@@ -9,7 +9,7 @@ router.post('/login', login);
 router.post('/register', register)
 router.patch('/addfriend/:userId/:friendId', checkUserAuth, makeFriends)
 router.patch('/update',checkUserAuth,updateProfile)
-router.patch('/deleteImage',checkUserAuth,endProfileImage)
+router.delete('/deleteImage',checkUserAuth,endProfileImage)
 router.delete('/deleteProfile',checkUserAuth,deleteProfile)
 
 
