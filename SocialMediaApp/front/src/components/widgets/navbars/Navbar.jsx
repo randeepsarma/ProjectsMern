@@ -141,7 +141,7 @@ const Navbar = () => {
                 data.readByreceiver = true
                 dispatch(changeMessagesManual(0))
 
-                funct()
+                funct(obj.user,obj.token)
 
             }
             notif.play()
