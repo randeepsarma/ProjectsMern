@@ -1,0 +1,10 @@
+.container {
+    position: relative;
+}
+
+.logout {
+    position: absolute;
+    right: 0.9%;
+    top: 80%;
+
+}
