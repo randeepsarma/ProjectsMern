@@ -93,9 +93,9 @@ const PostParent = ({ profile, profileId, userData, setuserData }) => {
           </>}
 
         {
-          details.map(({  userId, postUrl, location, description, _id, likes, updatedAt }) => (
+          details.map(({  userId, postUrl, location, description, _id, likes, updatedAt,createdAt }) => (
             profile === "profile" && profileId !== userId ? <Fragment key={_id}></Fragment> :
-              <PostWidget key={_id} userId={userId}  postUrl={postUrl} location={location} description={description} _id={_id} handleDeletePost={handleDeletePost} handleFriendRequest={handleRequest} likes={likes} profileId={profileId} profile={profile} updatedAt={updatedAt} />
+              <PostWidget key={_id} userId={userId} createdAt={createdAt}  postUrl={postUrl} location={location} description={description} _id={_id} handleDeletePost={handleDeletePost} handleFriendRequest={handleRequest} likes={likes} profileId={profileId} profile={profile} updatedAt={updatedAt} />
 
           ))
         }
