@@ -19,7 +19,7 @@ import { deleteComment, getComments, handleLikeRequest } from "api/postAuth";
 import CommentEdit from 'components/widgets/commentsWidget/CommentEdit';
 import { CommentContent } from 'components/widgets/commentsWidget/CommentContent';
 import { getUserData } from 'api/userAuth';
-const PostWidget = ({ userId, postUrl, description, _id, handleDeletePost, handleFriendRequest, likes, profile, updatedAt }) => {
+const PostWidget = ({ userId, postUrl, description, _id, handleDeletePost, handleFriendRequest, likes, profile, updatedAt,createdAt }) => {
   const [userInfo, setuserInformation] = useState(null)
   //console.log("postId:", _id)
   //console.log("userId", userId)
@@ -86,7 +86,7 @@ const PostWidget = ({ userId, postUrl, description, _id, handleDeletePost, handl
     fetchComments()
   }, [])
   //console.log(_id)
-  let newDate = new Date(updatedAt)
+  let newDate = new Date(createdAt)
   let arr = newDate.toString().split(" ")
 
 
