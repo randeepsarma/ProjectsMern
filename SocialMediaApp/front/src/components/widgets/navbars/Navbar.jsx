@@ -108,7 +108,7 @@ const Navbar = () => {
         if (isExpiredToken) {
             handleLogout()
         }
-    }, [obj.token])
+    }, [])
 
     const handleMessage = async (e) => {
         e.preventDefault()
