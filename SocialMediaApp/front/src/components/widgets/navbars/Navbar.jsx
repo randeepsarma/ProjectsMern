@@ -101,7 +101,7 @@ const Navbar = () => {
         var isExpiredToken = false;
 
         var dateNow = new Date();
-
+        console.log('Hey')
         if (obj.token?.exp < dateNow.getTime() / 1000) {
             isExpiredToken = true;
         }
